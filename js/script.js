@@ -19,7 +19,7 @@ function getWaifus() {
         cardsContainer.innerHTML = ""; // Limpia los resultados anteriores
         data.files.forEach((imageUrl) => {
           const card = document.createElement("div");
-          card.className = "card";
+          card.className = "cardapi";
           card.innerHTML = `
               <img class="image-crop" src="${imageUrl}" alt="${category} image">
             `;
