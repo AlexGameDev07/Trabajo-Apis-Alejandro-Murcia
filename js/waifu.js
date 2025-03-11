@@ -1,6 +1,6 @@
 function getWaifus() {
-  let type = document.getElementById("type").value.toLowerCase();
-  let category = document.getElementById("category").value.toLowerCase();
+  let type = "sfw";
+  let category = "dance";
   const url = `https://api.waifu.pics/many/${type}/${category}`;
 
   const requestData = { exclude: [] }; // Puedes agregar URLs que quieras excluir en este array
@@ -36,3 +36,31 @@ function getWaifus() {
         "Ocurrió un error al obtener las imágenes.";
     });
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  getWaifus();
+});
+function getBackgroundImage() {
+  let type = "sfw"; // Puedes cambiar esto según tus necesidades
+  let category = "hug"; // Puedes cambiar esto según tus necesidades
+  const url = `https://api.waifu.pics/sfw/${category}`;
+
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.url) {
+        document.body.style.backgroundImage = `url(${data.url})`;
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundPosition = "center";
+      } else {
+        console.error("No se encontró la imagen.");
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  getBackgroundImage();
+});
