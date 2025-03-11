@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", function() {
   
   function loadMultipleImages() {
     const url = 'https://api.nekosia.cat/api/v1/images/catgirl';
-    const numberOfImages = 20; // Número de imágenes que deseas cargar
+    const numberOfImages = 20;
     const imageContainer = document.getElementById("waifu-cards");
-    imageContainer.innerHTML = ""; // Limpia los resultados anteriores
+    imageContainer.innerHTML = "";
   
     for (let i = 0; i < numberOfImages; i++) {
       fetch(url)

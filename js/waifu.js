@@ -3,7 +3,7 @@ function getWaifus() {
   let category = "dance";
   const url = `https://api.waifu.pics/many/${type}/${category}`;
 
-  const requestData = { exclude: [] }; // Puedes agregar URLs que quieras excluir en este array
+  const requestData = { exclude: [] };
 
   fetch(url, {
     method: "POST",
@@ -16,7 +16,7 @@ function getWaifus() {
     .then((data) => {
       if (data.files && data.files.length > 0) {
         const cardsContainer = document.getElementById("waifu-cards");
-        cardsContainer.innerHTML = ""; // Limpia los resultados anteriores
+        cardsContainer.innerHTML = ""; 
         data.files.forEach((imageUrl) => {
           const card = document.createElement("div");
           card.className = "cardapi";
@@ -41,9 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
   getWaifus();
 });
 function getBackgroundImage() {
-  let type = "sfw"; // Puedes cambiar esto según tus necesidades
-  let category = "hug"; // Puedes cambiar esto según tus necesidades
-  const url = `https://api.waifu.pics/sfw/${category}`;
+  const url = `https://api.waifu.pics/sfw/hug`;
 
   fetch(url)
     .then((response) => response.json())
