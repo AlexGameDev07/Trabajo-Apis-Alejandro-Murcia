@@ -16,7 +16,7 @@ function getWaifus() {
     .then((data) => {
       if (data.files && data.files.length > 0) {
         const cardsContainer = document.getElementById("waifu-cards");
-        cardsContainer.innerHTML = ""; 
+        cardsContainer.innerHTML = "";
         data.files.forEach((imageUrl) => {
           const card = document.createElement("div");
           card.className = "cardapi";
@@ -37,7 +37,7 @@ function getWaifus() {
     });
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   getWaifus();
 });
 function getBackgroundImage() {
@@ -59,6 +59,6 @@ function getBackgroundImage() {
     });
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   getBackgroundImage();
 });
